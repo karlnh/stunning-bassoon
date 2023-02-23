@@ -31,6 +31,8 @@ Post.init(
             allowNull: false,
             defaultValue: DataTypes.NOW,
         },
+    },
+    {
         sequelize,
         timestamps: true,
         freezeTableName: true,
