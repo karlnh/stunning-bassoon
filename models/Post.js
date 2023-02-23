@@ -19,7 +19,7 @@ Post.init(
             type: DataTypes.TEXT,
             allowNull: true,
         },
-        creator: {
+        user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
