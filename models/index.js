@@ -1,15 +1,32 @@
 const User = require('./User');
 const Post = require('./Post');
+const Comment = require('./Comment');
 
-// users can have many posts,
+// Users
 User.hasMany(Post, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
 });
 
-// but a post only has one poster.
-Post.belongsTo(User, {
-    foreignKey: 'user_id'
+User.hasMany(Comment, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
-module.exports = { User, Post };
+Post.hasMany(Comment, {
+    foreignKey: 'post_id',
+    onDelete: 'CASCADE'
+});
+
+// but a post only has one poster.
+Post.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+Comment.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
+
+module.exports = { User, Post, Comment };
