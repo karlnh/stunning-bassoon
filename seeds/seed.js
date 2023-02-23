@@ -33,8 +33,6 @@ const seedDatabase = async () => {
     comments.push(newComment);
   };
 
-  console.log(comments);
-
   process.exit(0);
 };
 
