@@ -1,0 +1,31 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Tech Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">Homepage</a>
+                </li>
+                <li>
+                    <a href="">Dashboard</a>
+                </li>
+                {{#if logged_in}}
+                <li>
+                    <a href="">Login</a>
+                </li>
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {{{ body }}}
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>
