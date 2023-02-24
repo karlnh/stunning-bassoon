@@ -1,0 +1,17 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul {
+    list-style: none;
+}
+
+.post-title {
+    margin: 2rem;
+}
+
+.post-box {
+    padding: 0 1rem;
+    margin: 2rem;
+    border: 2px solid black;
+}
