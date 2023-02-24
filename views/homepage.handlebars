@@ -1,11 +1,14 @@
 {{#each posts as |post|}}
 <div class="post-box">
-    <h2 class="post-title"><strong>{{post.title}}</strong></h2>
-    <p>Created by: {{post.user.username}}</p>
-    <p>Content: {{post.content}}</p>
-    <p>Comments:
-        <br>{{post.comment}}</br>
-    </p>
+    <div>
+        <h2 class="post-title"><strong>{{post.title}}</strong></h2>
+        <p>Created by: {{post.user.username}}</p>
+    </div>
+    <div>
+        <div>
+            <p>Content: {{post.content}}</p>
+        </div>
+    </div>
 </div>
 
 {{/each}}
