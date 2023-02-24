@@ -5,21 +5,34 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     try {
         const postData = await Post.findAll({
-            include: [User]
+            include: [
+                {model: User, attributes: ["username"]}
+            ]
         });
         const posts = postData.map((post) => post.get({ plain: true }));
-        console.log(posts);
+        // console.log("Hi there:", posts);
         res.render('homepage', { posts });
 
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });
 
 router.get('/dashboard', withAuth, async (req, res) => {
     try {
-
+        const postData = await Post.findAll({
+            where: req.session.user_id
+        });
+        // const commentData = await Comment.findAll({
+        //     where: 
+        // })
+        // const userData = await User.findByPk({});
+        // })
+        const posts = postData.map((post) => post.get({ plain: true}));
+        res.render('dashboard', { posts });
     } catch (err) {
+        console.error(err);
         res.status(500).json(err);
     }
 })
