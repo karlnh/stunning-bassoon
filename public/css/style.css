@@ -10,7 +10,7 @@ ul {
     margin: 2rem;
 }
 
-.post-box {
+.post-box, .comment-box {
     padding: 0 1rem;
     margin: 2rem;
     border: 2px solid black;
